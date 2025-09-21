@@ -19,6 +19,11 @@ bot_client = slack.WebClient(token=os.environ['BOT_SLACK_TOKEN'])
 BOT_ID = bot_client.api_call("auth.test")['user_id']
 azure_client = DocumentAnalysisClient(endpoint=os.environ['AZURE_ENDPOINT'], credential=AzureKeyCredential(os.environ['AZURE_TOKEN']))
 
+@app.route("/")
+def index():
+    return jsonify({"status": "ok"})
+
+
 @slack_event_adapter.on('message')
 def message(payload):
     response = jsonify({'status': 'ok'})
@@ -43,7 +48,7 @@ def message(payload):
   
     print(result.documents[0].fields[0].value)
 
-    return response, 200
+    return jsonify({"status": "ok"}), 200
 
 PORT = int(os.environ.get("PORT", 8080))
 
