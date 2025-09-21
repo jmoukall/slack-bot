@@ -1,0 +1,8 @@
+slack
+os
+requests
+pathlib
+dotenv
+flask
+slackeventsapi
+azure
