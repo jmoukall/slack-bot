@@ -1,7 +1,7 @@
-slack
-requests
-pathlib
-dotenv
-flask
-slackeventsapi
-azure
+slack-sdk==3.26.3
+requests==2.32.3
+python-dotenv==1.0.0
+flask==3.0.3
+slackeventsapi==2.2.2
+azure-ai-formrecognizer==4.2.1
+gunicorn==23.0.0
